@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading - Lalo</title>
+    <link rel="icon" type="image/png" href="./favicon.png">
+    <link rel="stylesheet" href="./loading.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class="loading-container">
+      <div class="loading-wrapper">
+        <div class="is-animate">
+          <div class="l">L</div>
+          <div class="l">a</div>
+          <div class="l">l</div>
+          <div class="l">o</div>
+        </div>
+      </div>
+    </div>
+    <script>
+      // Redirect to main page after loading
+      window.addEventListener('load', function() {
+        setTimeout(function() {
+          window.location.href = './index.html';
+        }, 2000);
+      });
+    </script>
+  </body>
+</html>
