@@ -4,9 +4,9 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lalo</title>
+    <title>The Alen</title>
     <link rel="icon" type="image/png" href="./favicon.png">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./style.css?v=alen9">
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   </head>
@@ -14,138 +14,145 @@
   <body>
     <!-- Loading Screen -->
     <div class="loading-screen" id="loadingScreen">
-      <div class="loading-wrapper">
-        <div class="is-animate">
-          <div class="l">l</div>
-          <div class="l">o</div>
-          <div class="l">a</div>
-          <div class="l">d</div>
-          <div class="l">i</div>
-          <div class="l">n</div>
-          <div class="l">g</div>
-        </div>
+      <div class="loading-spinner" id="loadingSpinner">
+        <div><div><div><div><div><div><div><div><div><div></div></div></div></div></div></div></div></div></div></div>
       </div>
     </div>
 
     <!-- Main Content -->
     <div class="main-content" id="mainContent" style="display: none;">
-    <!-- Paw Prints Background -->
-    <div class="paw-prints-container" id="pawPrintsContainer"></div>
-    
     <!-- Top Bar -->
     <div class="top-bar">
       <div class="top-bar-content">
-        <div class="game-title-top">Lalo The Cat</div>
+        <div class="game-title-top">The Alen</div>
       </div>
     </div>
 
     <div class="app-container">
       <!-- Left Sidebar -->
       <div class="sidebar left-sidebar">
-        <!-- Meet Lalo Panel -->
-        <div class="panel meet-lalo-panel">
-          <div class="panel-header">MEET LALO</div>
-          <div class="lalo-image-container">
-            <canvas id="lalo3dCanvas" class="lalo-3d-canvas"></canvas>
+        <!-- Meet Alen Panel -->
+        <div class="panel meet-alen-panel">
+          <div class="panel-header">MEET ALEN</div>
+          <div class="alen-image-container">
+            <canvas id="alen3dCanvas" class="alen-3d-canvas"></canvas>
           </div>
         </div>
 
-        <!-- Cat Stats -->
-        <div class="panel cat-stats-panel">
-          <div class="panel-header">CAT STATS</div>
-          <div class="cat-stats-content">
-          <div class="stat-section-title">Primary Stats</div>
+        <!-- Alen Stats -->
+        <div class="panel alen-stats-panel">
+          <div class="panel-header">ALEN STATS</div>
+          <div class="alen-stats-content">
+          <div class="stat-section-title">Core Parameters</div>
           <div class="stat-row">
-            <span class="stat-label">Hunger</span>
+            <span class="stat-label">Quantum Coherence</span>
             <div class="stat-bar-wrapper">
-              <div class="stat-bar hunger-bar" style="width: 99%"></div>
+              <div class="stat-bar quantum-bar" style="width: 87%"></div>
             </div>
-            <span class="stat-value">99/100</span>
+            <span class="stat-value">87/100</span>
           </div>
           <div class="stat-row">
-            <span class="stat-label">Energy</span>
+            <span class="stat-label">Plasma Stability</span>
             <div class="stat-bar-wrapper">
-              <div class="stat-bar energy-bar" style="width: 100%"></div>
+              <div class="stat-bar plasma-bar" style="width: 92%"></div>
             </div>
-            <span class="stat-value">100/100</span>
+            <span class="stat-value">92/100</span>
           </div>
           <div class="stat-row">
-            <span class="stat-label">Happiness</span>
+            <span class="stat-label">Neural Sync</span>
             <div class="stat-bar-wrapper">
-              <div class="stat-bar happiness-bar" style="width: 99%"></div>
+              <div class="stat-bar neural-bar" style="width: 78%"></div>
             </div>
-            <span class="stat-value">99/100</span>
+            <span class="stat-value">78/100</span>
           </div>
           <div class="stat-row">
-            <span class="stat-label">Health</span>
+            <span class="stat-label">Dimensional Anchor</span>
             <div class="stat-bar-wrapper">
-              <div class="stat-bar health-bar" style="width: 100%"></div>
+              <div class="stat-bar anchor-bar" style="width: 95%"></div>
             </div>
-            <span class="stat-value">100/100</span>
+            <span class="stat-value">95/100</span>
           </div>
           <div class="stat-row">
-            <span class="stat-label">Cleanliness</span>
+            <span class="stat-label">Bio-Energy Field</span>
             <div class="stat-bar-wrapper">
-              <div class="stat-bar cleanliness-bar" style="width: 100%"></div>
+              <div class="stat-bar bio-bar" style="width: 83%"></div>
             </div>
-            <span class="stat-value">100/100</span>
+            <span class="stat-value">83/100</span>
           </div>
 
-          <div class="stat-section-title" style="margin-top: 20px;">Emotional Stats</div>
+          <div class="stat-section-title" style="margin-top: 20px;">Consciousness Metrics</div>
           <div class="stat-row">
-            <span class="stat-label">Hope</span>
+            <span class="stat-label">Cosmic Awareness</span>
             <div class="stat-bar-wrapper">
-              <div class="stat-bar hope-bar" style="width: 85%"></div>
+              <div class="stat-bar awareness-bar" style="width: 91%"></div>
             </div>
-            <span class="stat-value">85/100</span>
+            <span class="stat-value">91/100</span>
           </div>
           <div class="stat-row">
-            <span class="stat-label">Courage</span>
+            <span class="stat-label">Temporal Alignment</span>
             <div class="stat-bar-wrapper">
-              <div class="stat-bar courage-bar" style="width: 75%"></div>
+              <div class="stat-bar temporal-bar" style="width: 76%"></div>
             </div>
-            <span class="stat-value">75/100</span>
+            <span class="stat-value">76/100</span>
           </div>
           <div class="stat-row">
-            <span class="stat-label">Stress</span>
+            <span class="stat-label">Reality Distortion</span>
             <div class="stat-bar-wrapper">
-              <div class="stat-bar stress-bar" style="width: 20%"></div>
+              <div class="stat-bar distortion-bar" style="width: 15%"></div>
             </div>
-            <span class="stat-value">20/100</span>
+            <span class="stat-value">15/100</span>
           </div>
           <div class="stat-row">
-            <span class="stat-label">Trust</span>
+            <span class="stat-label">Interdimensional Trust</span>
             <div class="stat-bar-wrapper">
-              <div class="stat-bar trust-bar" style="width: 90%"></div>
+              <div class="stat-bar interdimensional-bar" style="width: 88%"></div>
             </div>
-            <span class="stat-value">90/100</span>
+            <span class="stat-value">88/100</span>
           </div>
           </div>
         </div>
 
       </div>
 
-      <!-- Center Game Area -->
+      <!-- Center Communication Area -->
       <div class="center-area">
-        <div class="device-level-panel">
-          <span class="device-level-value" id="gameLevelDisplay">Level 1: The Road</span>
-        </div>
-        <div class="pet-device">
-          <div class="device-top-loop"></div>
-          <div class="device-screen">
-            <div id="game-container"></div>
+        <div class="communication-panel">
+          <div class="panel-header">COMMUNICATION INTERFACE</div>
+          <div class="translator-section">
+            <div class="translator-header">Language Translator</div>
+            <div class="translator-controls">
+              <select id="sourceLang" class="lang-select">
+                <option value="en">English</option>
+                <option value="zh">Chinese</option>
+              </select>
+              <span class="arrow">→</span>
+              <select id="targetLang" class="lang-select">
+                <option value="alien">Alien Language</option>
+              </select>
+            </div>
+            <textarea id="inputText" class="translator-input" placeholder="Type your message here..."></textarea>
+            <button id="translateBtn" class="translate-button">Translate</button>
+            <div class="translator-output-wrap">
+              <div id="outputText" class="translator-output"></div>
+              <button id="copyAlienBtn" class="copy-alien-btn" style="display: none;">Copy</button>
+            </div>
           </div>
-          <div class="device-buttons">
-            <div class="device-button" id="xButton" title="Visit X">
-              <img src="./x-icon.svg" alt="X" class="device-button-icon">
+          <div class="chat-section">
+            <div class="chat-header">Conversation Log</div>
+            <div id="chatMessages" class="chat-messages"></div>
+            <div class="chat-input-area">
+              <input type="text" id="chatInput" class="chat-input" placeholder="Ask Alen about civilizations...">
+              <button id="sendBtn" class="send-button">Send</button>
             </div>
-            <div class="device-button" id="soundButton" title="Toggle Sound">
-              <svg class="device-button-icon sound-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M3 9V15H7L12 20V4L7 9H3ZM16.5 12C16.5 10.23 15.48 8.71 14 7.97V16.02C15.48 15.29 16.5 13.77 16.5 12ZM14 3.23V5.29C16.89 6.15 19 8.83 19 12C19 15.17 16.89 17.85 14 18.71V20.77C18.01 19.86 21 16.28 21 12C21 7.72 18.01 4.14 14 3.23Z" fill="currentColor"/>
-              </svg>
-            </div>
-            <div class="device-button" id="pumpfunButton" title="Visit Pump.fun">
-              <img src="./pumpfun-icon.png" alt="Pump.fun" class="device-button-icon">
+          </div>
+        </div>
+
+        <!-- Alen Physical Parameters -->
+        <div class="panel alen-physical-panel">
+          <div class="panel-header">PHYSICAL PARAMETERS</div>
+          <div class="alen-physical-content">
+            <div class="alen-character-image-wrapper physical-3d-wrapper">
+              <canvas id="physical3dCanvas" class="physical-3d-canvas"></canvas>
             </div>
           </div>
         </div>
@@ -153,160 +160,105 @@
 
       <!-- Right Sidebar -->
       <div class="sidebar right-sidebar">
-        <!-- Achievements -->
+        <!-- Extraterrestrial Civilizations -->
         <div class="panel">
-          <div class="panel-header">ACHIEVEMENTS</div>
-          <div class="achievement-list">
-            <div class="achievement-item unlocked">
-              <span class="achievement-icon">[T]</span>
-              <div class="achievement-info">
-                <span class="achievement-name">First Steps</span>
-                <span class="achievement-desc">First adventure</span>
+          <div class="panel-header">CIVILIZATIONS</div>
+          <div class="civilization-list">
+            <div class="civilization-item">
+              <span class="civilization-icon">◆</span>
+              <div class="civilization-info">
+                <span class="civilization-name">Zeta Reticuli</span>
+                <span class="civilization-desc">Advanced quantum civilization</span>
               </div>
             </div>
-            <div class="achievement-item unlocked">
-              <span class="achievement-icon">[*]</span>
-              <div class="achievement-info">
-                <span class="achievement-name">Happy Cat</span>
-                <span class="achievement-desc">Reach 100 happiness</span>
+            <div class="civilization-item">
+              <span class="civilization-icon">◇</span>
+              <div class="civilization-info">
+                <span class="civilization-name">Andromeda Sector</span>
+                <span class="civilization-desc">Interdimensional beings</span>
               </div>
             </div>
-            <div class="achievement-item locked">
-              <span class="achievement-icon">[?]</span>
-              <div class="achievement-info">
-                <span class="achievement-name">Explorer</span>
-                <span class="achievement-desc">Visit all environments</span>
+            <div class="civilization-item">
+              <span class="civilization-icon">◉</span>
+              <div class="civilization-info">
+                <span class="civilization-name">Pleiades Cluster</span>
+                <span class="civilization-desc">Energy-based lifeforms</span>
               </div>
             </div>
-            <div class="achievement-item locked">
-              <span class="achievement-icon">[?]</span>
-              <div class="achievement-info">
-                <span class="achievement-name">Champion</span>
-                <span class="achievement-desc">Full journey</span>
+            <div class="civilization-item">
+              <span class="civilization-icon">◎</span>
+              <div class="civilization-info">
+                <span class="civilization-name">Orion Belt</span>
+                <span class="civilization-desc">Ancient cosmic race</span>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Daily Tasks -->
+        <!-- Humanity Challenges -->
         <div class="panel">
-          <div class="panel-header">DAILY TASKS</div>
-          <div class="task-list">
-            <div class="task-item completed">
-              <span class="task-checkbox">[X]</span>
-              <span class="task-text">Feed Lalo 3 times</span>
+          <div class="panel-header">HUMANITY CHALLENGES</div>
+          <div class="challenge-list">
+            <div class="challenge-item">
+              <span class="challenge-icon">▸</span>
+              <span class="challenge-text">Climate Transformation</span>
             </div>
-            <div class="task-item">
-              <span class="task-checkbox">[ ]</span>
-              <span class="task-text">Play 5 games</span>
+            <div class="challenge-item">
+              <span class="challenge-icon">▹</span>
+              <span class="challenge-text">Genetic Evolution</span>
             </div>
-            <div class="task-item">
-              <span class="task-checkbox">[ ]</span>
-              <span class="task-text">Reach 1000 steps</span>
+            <div class="challenge-item">
+              <span class="challenge-icon">►</span>
+              <span class="challenge-text">AI Integration</span>
             </div>
-            <div class="task-item completed">
-              <span class="task-checkbox">[X]</span>
-              <span class="task-text">Keep hope above 80</span>
+            <div class="challenge-item">
+              <span class="challenge-icon">▼</span>
+              <span class="challenge-text">Space Colonization</span>
+            </div>
+            <div class="challenge-item">
+              <span class="challenge-icon">◆</span>
+              <span class="challenge-text">Energy Revolution</span>
             </div>
           </div>
         </div>
 
-        <!-- Customization -->
+        <!-- Knowledge Base -->
         <div class="panel">
-          <div class="panel-header">CUSTOMIZATION</div>
-          <div class="custom-section">
-            <div class="custom-label">Skin</div>
-            <div class="custom-options">
-              <button class="custom-btn active">Default</button>
-              <button class="custom-btn">Orange</button>
-              <button class="custom-btn">Black</button>
+          <div class="panel-header">KNOWLEDGE BASE</div>
+          <div class="knowledge-items">
+            <div class="knowledge-item">
+              <span class="knowledge-title">Quantum Communication</span>
+              <span class="knowledge-desc">Instantaneous information transfer</span>
             </div>
-          </div>
-          <div class="custom-section">
-            <div class="custom-label">Accessory</div>
-            <div class="custom-options">
-              <button class="custom-btn">None</button>
-              <button class="custom-btn">Hat</button>
-              <button class="custom-btn">Bow</button>
+            <div class="knowledge-item">
+              <span class="knowledge-title">Dimensional Travel</span>
+              <span class="knowledge-desc">Cross-reality navigation</span>
+            </div>
+            <div class="knowledge-item">
+              <span class="knowledge-title">Consciousness Transfer</span>
+              <span class="knowledge-desc">Mind-body separation technology</span>
             </div>
           </div>
         </div>
 
-        <!-- Stats History -->
+        <!-- Contact Links -->
         <div class="panel">
-          <div class="panel-header">STATS HISTORY</div>
-          <div class="history-chart">
-            <div class="chart-bar" style="height: 85%">
-              <span class="chart-label">Hope</span>
-            </div>
-            <div class="chart-bar" style="height: 75%">
-              <span class="chart-label">Courage</span>
-            </div>
-            <div class="chart-bar" style="height: 90%">
-              <span class="chart-label">Trust</span>
-            </div>
-            <div class="chart-bar" style="height: 60%">
-              <span class="chart-label">Stress</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Mini Games -->
-        <div class="panel">
-          <div class="panel-header">MINI GAMES</div>
-          <div class="minigame-grid">
-            <button class="minigame-btn">
-              <span class="minigame-icon">TGT</span>
-              <span class="minigame-name">Target</span>
+          <div class="panel-header">CONNECT</div>
+          <div class="connect-buttons">
+            <button class="connect-btn" id="xButton" title="Visit X">
+              <img src="./x-icon.svg" alt="X" class="connect-icon">
+              <span>X</span>
             </button>
-            <button class="minigame-btn">
-              <span class="minigame-icon">PZL</span>
-              <span class="minigame-name">Puzzle</span>
-            </button>
-            <button class="minigame-btn">
-              <span class="minigame-icon">DCE</span>
-              <span class="minigame-name">Dice</span>
-            </button>
-            <button class="minigame-btn">
-              <span class="minigame-icon">ARC</span>
-              <span class="minigame-name">Arcade</span>
+            <button class="connect-btn" id="pumpfunButton" title="Visit Pump.fun">
+              <img src="./pumpfun-icon.png" alt="Pump.fun" class="connect-icon">
+              <span>Pump.fun</span>
             </button>
           </div>
         </div>
       </div>
     </div>
 
-    <audio id="backgroundMusic" loop autoplay>
-      <source src="./background-music.mp3" type="audio/mpeg">
-    </audio>
-    <script src='https://codepen.io/Gthibaud/pen/dybzvNw.js'></script>
-    <script src="./script.js?v=20levels"></script>
-    <script src="./pet-stats.js"></script>
     <script>
-      // Start background music
-      const startMusic = () => {
-        const music = document.getElementById('backgroundMusic');
-        if (music) {
-          music.volume = 0.5;
-          const playPromise = music.play();
-          if (playPromise !== undefined) {
-            playPromise.catch(e => {
-              console.log('Autoplay blocked, music will play on user interaction');
-            });
-          }
-        }
-      };
-
-      document.addEventListener('DOMContentLoaded', () => {
-        startMusic();
-        
-        document.addEventListener('click', () => {
-          const music = document.getElementById('backgroundMusic');
-          if (music && music.paused) {
-            music.play();
-          }
-        }, { once: true });
-      });
     </script>
     <script>
       // Loading screen logic
@@ -331,11 +283,127 @@
     <script>
       // Device buttons functionality
       document.addEventListener('DOMContentLoaded', function() {
+        // Alien Language Translator
+        function translateToAlien(text) {
+          // Simple alien language transformation
+          const alienMap = {
+            'a': 'α', 'e': 'ε', 'i': 'ι', 'o': 'ω', 'u': 'υ',
+            'A': 'Α', 'E': 'Ε', 'I': 'Ι', 'O': 'Ω', 'U': 'Υ',
+            ' ': ' ⚡ ', '.': ' ◊ ', '?': ' ◇ ', '!': ' ◆ '
+          };
+          let alienText = text.split('').map(char => {
+            return alienMap[char] || char;
+          }).join('');
+          return alienText + ' ⚡◊◆';
+        }
+
+        // Translator functionality
+        const translateBtn = document.getElementById('translateBtn');
+        const inputText = document.getElementById('inputText');
+        const outputText = document.getElementById('outputText');
+        const sourceLang = document.getElementById('sourceLang');
+
+        if (translateBtn && inputText && outputText) {
+          const copyAlienBtn = document.getElementById('copyAlienBtn');
+          translateBtn.addEventListener('click', function() {
+            const text = inputText.value.trim();
+            if (text) {
+              const alienTranslation = translateToAlien(text);
+              outputText.textContent = alienTranslation;
+              outputText.style.display = 'block';
+              if (copyAlienBtn) {
+                copyAlienBtn.style.display = 'inline-block';
+              }
+            }
+          });
+
+          if (copyAlienBtn) {
+            copyAlienBtn.addEventListener('click', function() {
+              const t = outputText.textContent;
+              if (t) {
+                navigator.clipboard.writeText(t).then(function() {
+                  copyAlienBtn.textContent = 'Copied!';
+                  setTimeout(function() { copyAlienBtn.textContent = 'Copy'; }, 1500);
+                });
+              }
+            });
+          }
+
+          inputText.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter' && e.ctrlKey) {
+              translateBtn.click();
+            }
+          });
+        }
+
+        // Chat functionality (ChatGPT API via /api/chat — Alen responds in alien language)
+        const sendBtn = document.getElementById('sendBtn');
+        const chatInput = document.getElementById('chatInput');
+        const chatMessages = document.getElementById('chatMessages');
+
+        function addChatMessage(text, isUser) {
+          const messageDiv = document.createElement('div');
+          messageDiv.className = isUser ? 'chat-message user' : 'chat-message alien';
+          messageDiv.textContent = text;
+          if (chatMessages) {
+            chatMessages.appendChild(messageDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+          }
+        }
+
+        function fallbackAlienReply() {
+          const fallbacks = [
+            'Ηυmαn ⚡ ωυαντ ◊ κνωωλεδγε ◆ αλφα ετα ◊ ⚡◊◆',
+            'Θε ωσταrσ ◊ τελλ υσ ◆ μορε ⚡◊◆',
+            'Ωυr ◊ χιβιλιζατιον ◊ ωαιτσ ◆ ⚡◊◆'
+          ];
+          return fallbacks[Math.floor(Math.random() * fallbacks.length)];
+        }
+
+        if (sendBtn && chatInput && chatMessages) {
+          sendBtn.addEventListener('click', async function() {
+            const text = chatInput.value.trim();
+            if (!text) return;
+            addChatMessage(text, true);
+            chatInput.value = '';
+            addChatMessage('Alen: …', false);
+            const placeholder = chatMessages.lastElementChild;
+
+            try {
+              const base = window.location.origin;
+              const res = await fetch(base + '/api/chat', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ message: text })
+              });
+              const data = await res.json();
+              const reply = (data.reply && data.reply.trim()) ? data.reply : fallbackAlienReply();
+              if (placeholder && placeholder.textContent === 'Alen: …') {
+                placeholder.textContent = 'Alen: ' + reply;
+              } else {
+                addChatMessage('Alen: ' + reply, false);
+              }
+            } catch (e) {
+              if (placeholder && placeholder.textContent === 'Alen: …') {
+                placeholder.textContent = 'Alen: ' + fallbackAlienReply();
+              } else {
+                addChatMessage('Alen: ' + fallbackAlienReply(), false);
+              }
+            }
+          });
+
+          chatInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+              sendBtn.click();
+            }
+          });
+        }
+
         // X button - redirect to X
         const xButton = document.getElementById('xButton');
         if (xButton) {
           xButton.addEventListener('click', function() {
-            window.open('https://x.com/thelalocat', '_blank');
+            window.open('https://x.com/thea1en', '_blank');
           });
         }
 
@@ -343,62 +411,376 @@
         const pumpfunButton = document.getElementById('pumpfunButton');
         if (pumpfunButton) {
           pumpfunButton.addEventListener('click', function() {
-            window.open('https://pump.fun/coin/9q8E9SwGukJXPHcWFtEYFbUFkcMjrtYGrm2axB3kpump', '_blank');
+            window.open('https://pump.fun/coin/FyeZy8XQPQXWnhj9jBbDVY4kbVK5hKjbpKZQf2ECpump', '_blank');
           });
         }
 
-        // Sound button - toggle music
-        const soundButton = document.getElementById('soundButton');
-        const soundIcon = soundButton?.querySelector('.sound-icon');
-        let isMuted = false;
 
-        if (soundButton && soundIcon) {
-          soundButton.addEventListener('click', function() {
-            const music = document.getElementById('backgroundMusic');
-            if (music) {
-              if (isMuted) {
-                music.play();
-                isMuted = false;
-                // Sound on - speaker with sound waves
-                soundIcon.innerHTML = '<path d="M3 9V15H7L12 20V4L7 9H3ZM16.5 12C16.5 10.23 15.48 8.71 14 7.97V16.02C15.48 15.29 16.5 13.77 16.5 12ZM14 3.23V5.29C16.89 6.15 19 8.83 19 12C19 15.17 16.89 17.85 14 18.71V20.77C18.01 19.86 21 16.28 21 12C21 7.72 18.01 4.14 14 3.23Z" fill="currentColor"/>';
-              } else {
-                music.pause();
-                isMuted = true;
-                // Sound off - speaker without sound waves (no X)
-                soundIcon.innerHTML = '<path d="M3 9V15H7L12 20V4L7 9H3Z" fill="currentColor"/>';
-              }
-            }
-          });
-        }
-
-        // Level counter above TV — sync with game (number + name)
-        var LEVEL_NAMES = [
-          'The Road', 'Forest Path', 'Mountain Trail', 'Desert Journey', 'Ocean Shore', 'Final Quest',
-          'Hidden Valley', 'Stormy Pass', 'Crystal Cave', 'Sunset Hills', 'Frost Lake', 'Thunder Ridge',
-          'Misty Woods', 'Golden Sands', 'Star Field', 'Dragon Peak', 'Silent Marsh', 'Fire Canyon',
-          'Moon Bridge', 'Paradise End'
-        ];
-        function getLevelText(level) {
-          var n = Math.max(1, Math.min(20, parseInt(level, 10) || 1));
-          var name = LEVEL_NAMES[n - 1] || ('Level ' + n);
-          return 'Level ' + n + ': ' + name;
-        }
-        function updateGameLevelDisplay(level) {
-          const el = document.getElementById('gameLevelDisplay');
-          if (el) el.textContent = getLevelText(level);
-        }
-        window.addEventListener('gameLevelChange', function(e) {
-          if (e.detail && e.detail.level != null) updateGameLevelDisplay(e.detail.level);
-        });
-        setInterval(function() {
-          if (window.game && typeof window.game.current_level !== 'undefined') {
-            const el = document.getElementById('gameLevelDisplay');
-            var text = getLevelText(window.game.current_level);
-            if (el && el.textContent !== text) updateGameLevelDisplay(window.game.current_level);
+        // Initialize welcome message
+        setTimeout(() => {
+          if (chatMessages) {
+            addChatMessage('Alen: Greetings, human. I am Alen from another planet. I will share knowledge about extraterrestrial civilizations and discuss the challenges facing your species.', false);
           }
-        }, 500);
+        }, 2000);
 
-        // 3D Model Loader for Meet Lalo panel
+        // Initialize Alen 3D Model
+        let alen3DInitialized = false;
+        function initAlen3D() {
+          if (alen3DInitialized) return;
+          
+          const canvas = document.getElementById('alen3dCanvas');
+          if (!canvas) {
+            console.log('Alen canvas not found, retrying...');
+            setTimeout(initAlen3D, 200);
+            return;
+          }
+          
+          if (typeof THREE === 'undefined') {
+            console.log('THREE.js not loaded, retrying...');
+            setTimeout(initAlen3D, 200);
+            return;
+          }
+
+          if (typeof THREE.GLTFLoader === 'undefined' && typeof GLTFLoader === 'undefined') {
+            console.log('GLTFLoader not loaded, trying to load...');
+            const script = document.createElement('script');
+            script.src = 'https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js';
+            script.onload = function() {
+              console.log('GLTFLoader script loaded, checking availability...');
+              setTimeout(function() {
+                if (typeof THREE.GLTFLoader !== 'undefined') {
+                  console.log('THREE.GLTFLoader is available');
+                  setTimeout(initAlen3D, 100);
+                } else if (typeof GLTFLoader !== 'undefined') {
+                  console.log('GLTFLoader is available');
+                  setTimeout(initAlen3D, 100);
+                } else {
+                  console.error('GLTFLoader loaded but not accessible');
+                  setTimeout(initAlen3D, 500);
+                }
+              }, 200);
+            };
+            script.onerror = function() {
+              console.error('Failed to load GLTFLoader script');
+              setTimeout(initAlen3D, 1000);
+            };
+            document.head.appendChild(script);
+            return;
+          }
+
+          const container = canvas.parentElement;
+          if (!container) {
+            console.log('Container not found, retrying...');
+            setTimeout(initAlen3D, 200);
+            return;
+          }
+          
+          const width = container.clientWidth || 300;
+          const height = container.clientHeight || 300;
+          
+          if (width === 0 || height === 0) {
+            console.log('Container has zero size, retrying...', width, height);
+            setTimeout(initAlen3D, 200);
+            return;
+          }
+          
+          alen3DInitialized = true;
+          console.log('Initializing Alen 3D model...');
+
+          // Scene setup
+          const scene = new THREE.Scene();
+
+          const camera = new THREE.PerspectiveCamera(50, width / height, 0.1, 1000);
+          camera.position.set(0, 0, 3);
+
+          const renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: true });
+          renderer.setSize(width, height);
+          renderer.setPixelRatio(window.devicePixelRatio);
+          renderer.setClearColor(0x000000, 0);
+
+          // Lighting
+          const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
+          scene.add(ambientLight);
+          const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
+          directionalLight.position.set(5, 5, 5);
+          scene.add(directionalLight);
+
+          let model = null;
+          let mixer = null;
+          let isDragging = false;
+          let previousMousePosition = { x: 0, y: 0 };
+          let rotationX = 0;
+          let rotationY = 0;
+          const MAX_ROT_DEG = 30;
+          const MAX_ROT = (MAX_ROT_DEG * Math.PI) / 180;
+
+          // Mouse drag rotation
+          canvas.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            previousMousePosition = { x: e.clientX, y: e.clientY };
+          });
+
+          canvas.addEventListener('mousemove', (e) => {
+            if (!isDragging || !model) return;
+            const deltaX = e.clientX - previousMousePosition.x;
+            const deltaY = e.clientY - previousMousePosition.y;
+            rotationY = Math.max(-MAX_ROT, Math.min(MAX_ROT, rotationY + deltaX * 0.01));
+            rotationX = Math.max(-MAX_ROT, Math.min(MAX_ROT, rotationX + deltaY * 0.01));
+            model.rotation.y = rotationY;
+            model.rotation.x = rotationX;
+            previousMousePosition = { x: e.clientX, y: e.clientY };
+          });
+
+          canvas.addEventListener('mouseup', () => {
+            isDragging = false;
+            if (model) autoRotY = model.rotation.y;
+          });
+
+          canvas.addEventListener('mouseleave', () => {
+            isDragging = false;
+            if (model) autoRotY = model.rotation.y;
+          });
+
+          // Touch support
+          canvas.addEventListener('touchstart', (e) => {
+            e.preventDefault();
+            isDragging = true;
+            previousMousePosition = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+          });
+
+          canvas.addEventListener('touchmove', (e) => {
+            e.preventDefault();
+            if (!isDragging || !model) return;
+            const deltaX = e.touches[0].clientX - previousMousePosition.x;
+            const deltaY = e.touches[0].clientY - previousMousePosition.y;
+            rotationY = Math.max(-MAX_ROT, Math.min(MAX_ROT, rotationY + deltaX * 0.01));
+            rotationX = Math.max(-MAX_ROT, Math.min(MAX_ROT, rotationX + deltaY * 0.01));
+            model.rotation.y = rotationY;
+            model.rotation.x = rotationX;
+            previousMousePosition = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+          });
+
+          canvas.addEventListener('touchend', () => {
+            isDragging = false;
+            if (model) autoRotY = model.rotation.y;
+          });
+
+          // Auto rotation animation
+          let autoRotDir = 1;
+          let autoRotY = 0;
+          const AUTO_SPEED = 0.008 / 3;
+          const HALF_MAX = MAX_ROT / 2;
+          const clock = new THREE.Clock();
+          
+          function animate() {
+            requestAnimationFrame(animate);
+            const delta = clock.getDelta();
+            
+            if (mixer) {
+              mixer.update(delta);
+            }
+            
+            if (model && !isDragging) {
+              autoRotY += autoRotDir * AUTO_SPEED;
+              if (autoRotY >= HALF_MAX) { autoRotY = HALF_MAX; autoRotDir = -1; }
+              if (autoRotY <= -HALF_MAX) { autoRotY = -HALF_MAX; autoRotDir = 1; }
+              model.rotation.y = autoRotY;
+              model.rotation.x = 0;
+            }
+            renderer.render(scene, camera);
+          }
+          animate();
+
+          // Load GLB model
+          let LoaderClass = null;
+          if (typeof THREE.GLTFLoader !== 'undefined') {
+            LoaderClass = THREE.GLTFLoader;
+            console.log('Using THREE.GLTFLoader');
+          } else if (typeof GLTFLoader !== 'undefined') {
+            LoaderClass = GLTFLoader;
+            console.log('Using GLTFLoader');
+          } else {
+            console.error('GLTFLoader not available');
+            return;
+          }
+          const loader = new LoaderClass();
+          console.log('Loading Alen model: ./alen-model.glb');
+          loader.load(
+            './alen-model.glb',
+            (gltf) => {
+              console.log('Alen model loaded successfully!');
+              model = gltf.scene;
+              scene.add(model);
+
+              // Setup animation mixer if animations exist
+              if (gltf.animations && gltf.animations.length > 0) {
+                mixer = new THREE.AnimationMixer(model);
+                gltf.animations.forEach((clip) => {
+                  mixer.clipAction(clip).play();
+                });
+              }
+
+              // Center and scale model (75x smaller, 2x larger than before)
+              const box = new THREE.Box3().setFromObject(model);
+              const center = box.getCenter(new THREE.Vector3());
+              const size = box.getSize(new THREE.Vector3());
+              const maxDim = Math.max(size.x, size.y, size.z);
+              const scale = (2.0 / maxDim) / 75;
+              model.scale.multiplyScalar(scale);
+              model.position.x = -center.x * scale;
+              model.position.y = -center.y * scale - 1.35;
+              model.position.z = -center.z * scale;
+              console.log('Alen model positioned and scaled');
+            },
+            (progress) => {
+              if (progress.total > 0) {
+                const percent = (progress.loaded / progress.total) * 100;
+                console.log('Loading Alen model: ' + Math.round(percent) + '%');
+              }
+            },
+            (error) => {
+              console.error('Error loading Alen 3D model:', error);
+              alen3DInitialized = false; // Allow retry
+            }
+          );
+
+          // Handle resize
+          function handleResize() {
+            const newWidth = container.clientWidth;
+            const newHeight = container.clientHeight || 300;
+            camera.aspect = newWidth / newHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(newWidth, newHeight);
+          }
+          window.addEventListener('resize', handleResize);
+        }
+
+        // Physical Parameters panel 3D model
+        let physical3DInitialized = false;
+        function initPhysical3D() {
+          if (physical3DInitialized) return;
+          const canvas = document.getElementById('physical3dCanvas');
+          if (!canvas) {
+            setTimeout(initPhysical3D, 200);
+            return;
+          }
+          if (typeof THREE === 'undefined' || (typeof THREE.GLTFLoader === 'undefined' && typeof GLTFLoader === 'undefined')) {
+            setTimeout(initPhysical3D, 300);
+            return;
+          }
+          const container = canvas.parentElement;
+          if (!container) { setTimeout(initPhysical3D, 200); return; }
+          const width = container.clientWidth || 280;
+          const height = container.clientHeight || 220;
+          if (width === 0 || height === 0) {
+            setTimeout(initPhysical3D, 200);
+            return;
+          }
+          physical3DInitialized = true;
+
+          const scene = new THREE.Scene();
+          const camera = new THREE.PerspectiveCamera(50, width / height, 0.1, 1000);
+          camera.position.set(0, 0, 2.5);
+          const renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: true });
+          renderer.setSize(width, height);
+          renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+          renderer.setClearColor(0x000000, 0);
+
+          const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
+          scene.add(ambientLight);
+          const dirLight = new THREE.DirectionalLight(0xffffff, 0.8);
+          dirLight.position.set(5, 5, 5);
+          scene.add(dirLight);
+
+          let model = null;
+          let mixer = null;
+          let autoRotY = 0;
+          const LoaderClass = typeof THREE.GLTFLoader !== 'undefined' ? THREE.GLTFLoader : GLTFLoader;
+          const loader = new LoaderClass();
+          loader.load(
+            './alen-physical-model.glb',
+            function(gltf) {
+              model = gltf.scene;
+              scene.add(model);
+              if (gltf.animations && gltf.animations.length > 0) {
+                mixer = new THREE.AnimationMixer(model);
+                gltf.animations.forEach(function(clip) { mixer.clipAction(clip).play(); });
+              }
+              const box = new THREE.Box3().setFromObject(model);
+              const center = box.getCenter(new THREE.Vector3());
+              const size = box.getSize(new THREE.Vector3());
+              const maxDim = Math.max(size.x, size.y, size.z);
+              const scale = (1.8 / maxDim) / 2 * 3 * 0.6;
+              model.scale.multiplyScalar(scale);
+              model.position.x = -center.x * scale;
+              model.position.y = -center.y * scale - 0.3;
+              model.position.z = -center.z * scale;
+            },
+            undefined,
+            function(err) {
+              console.error('Physical 3D model load error:', err);
+              physical3DInitialized = false;
+            }
+          );
+
+          const MAX_ROT_DEG = 25;
+          const MAX_ROT = (MAX_ROT_DEG * Math.PI) / 180;
+          let autoRotDir = 1;
+          const AUTO_SPEED = 0.0012;
+          const clock = new THREE.Clock();
+          function animate() {
+            requestAnimationFrame(animate);
+            const delta = clock.getDelta();
+            if (mixer) mixer.update(delta);
+            if (model) {
+              autoRotY += autoRotDir * AUTO_SPEED;
+              if (autoRotY >= MAX_ROT) { autoRotY = MAX_ROT; autoRotDir = -1; }
+              if (autoRotY <= -MAX_ROT) { autoRotY = -MAX_ROT; autoRotDir = 1; }
+              model.rotation.y = autoRotY;
+            }
+            renderer.render(scene, camera);
+          }
+          animate();
+
+          function onResize() {
+            const w = container.clientWidth || 280;
+            const h = container.clientHeight || 220;
+            camera.aspect = w / h;
+            camera.updateProjectionMatrix();
+            renderer.setSize(w, h);
+          }
+          window.addEventListener('resize', onResize);
+        }
+
+        // Initialize Alen 3D model when main content is visible
+        function initAlen3DWhenReady() {
+          const mainContentEl = document.getElementById('mainContent');
+          if (mainContentEl) {
+            const isVisible = mainContentEl.style.display === 'block' || 
+                             mainContentEl.style.display === '' ||
+                             window.getComputedStyle(mainContentEl).display !== 'none';
+            if (isVisible) {
+              console.log('Main content visible, initializing Alen 3D model...');
+              setTimeout(initAlen3D, 500);
+              setTimeout(initPhysical3D, 1500);
+            } else {
+              setTimeout(initAlen3DWhenReady, 200);
+            }
+          } else {
+            setTimeout(initAlen3DWhenReady, 200);
+          }
+        }
+        
+        // Try to init immediately if content is already visible
+        document.addEventListener('DOMContentLoaded', function() {
+          setTimeout(initAlen3DWhenReady, 1000);
+        });
+        
+        // Also try after load event
+        window.addEventListener('load', function() {
+          setTimeout(initAlen3DWhenReady, 2000);
+        });
+
         let lalo3DInitialized = false;
         function initLalo3D() {
           if (lalo3DInitialized) return;
@@ -643,7 +1025,7 @@
           setTimeout(init3DWhenReady, 2000);
         });
 
-        // Paw prints animation
+        // Remove paw prints - not needed for alien theme
         function generateRandomPaws() {
           const container = document.getElementById('pawPrintsContainer');
           if (!container) return;
