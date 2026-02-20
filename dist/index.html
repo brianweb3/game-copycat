@@ -7,11 +7,14 @@
     <title>The Alen</title>
     <link rel="icon" type="image/png" href="./favicon.png">
     <link rel="stylesheet" href="./style.css?v=alen9">
-    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Orbitron:wght@500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   </head>
     
   <body>
+    <audio id="bgMusic" loop preload="auto">
+      <source src="./bg-music.mp3" type="audio/mpeg">
+    </audio>
     <!-- Loading Screen -->
     <div class="loading-screen" id="loadingScreen">
       <div class="loading-spinner" id="loadingSpinner">
@@ -19,12 +22,27 @@
       </div>
     </div>
 
+    <!-- Glitch Overlay -->
+    <div class="glitch-overlay" id="glitchOverlay">
+      <div class="glitch-layer glitch-layer-1"></div>
+      <div class="glitch-layer glitch-layer-2"></div>
+      <div class="glitch-layer glitch-layer-3"></div>
+    </div>
+    
     <!-- Main Content -->
     <div class="main-content" id="mainContent" style="display: none;">
     <!-- Top Bar -->
     <div class="top-bar">
       <div class="top-bar-content">
         <div class="game-title-top">The Alen</div>
+        <button type="button" class="sound-toggle" id="soundToggle" title="Sound on" aria-label="Toggle sound">
+          <span class="sound-icon sound-on">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a3 3 0 0 1 0 7M18 6a6 6 0 0 1 0 12"/></svg>
+          </span>
+          <span class="sound-icon sound-off" style="display: none;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="2" y1="2" x2="22" y2="22"/><path d="M22 12l-5 5M17 7l5 5"/></svg>
+          </span>
+        </button>
       </div>
     </div>
 
@@ -119,22 +137,29 @@
         <div class="communication-panel">
           <div class="panel-header">COMMUNICATION INTERFACE</div>
           <div class="translator-section">
-            <div class="translator-header">Language Translator</div>
+            <div class="translator-header">
+              <span class="translator-header-icon">◇</span> To Alen Language
+            </div>
             <div class="translator-controls">
+              <label class="translator-label">Source</label>
               <select id="sourceLang" class="lang-select">
                 <option value="en">English</option>
                 <option value="zh">Chinese</option>
               </select>
-              <span class="arrow">→</span>
+              <span class="translator-arrow" aria-hidden="true">⚡</span>
+              <label class="translator-label">Target</label>
               <select id="targetLang" class="lang-select">
-                <option value="alien">Alien Language</option>
+                <option value="alien">Alen</option>
               </select>
             </div>
-            <textarea id="inputText" class="translator-input" placeholder="Type your message here..."></textarea>
-            <button id="translateBtn" class="translate-button">Translate</button>
+            <textarea id="inputText" class="translator-input" placeholder="Enter human text to encode..."></textarea>
+            <button id="translateBtn" class="translate-button">
+              <span class="translate-btn-icon">◈</span> Encode
+            </button>
             <div class="translator-output-wrap">
+              <div class="translator-output-label">Alen output</div>
               <div id="outputText" class="translator-output"></div>
-              <button id="copyAlienBtn" class="copy-alien-btn" style="display: none;">Copy</button>
+              <button id="copyAlienBtn" class="copy-alien-btn" style="display: none;">Copy glyph</button>
             </div>
           </div>
           <div class="chat-section">
@@ -151,6 +176,32 @@
         <div class="panel alen-physical-panel">
           <div class="panel-header">PHYSICAL PARAMETERS</div>
           <div class="alen-physical-content">
+            <div class="physical-params-top">
+              <div class="physical-info-item">
+                <span class="physical-info-label">Height</span>
+                <span class="physical-info-value">14 ft</span>
+              </div>
+              <div class="physical-info-item">
+                <span class="physical-info-label">Mass</span>
+                <span class="physical-info-value">~280 kg</span>
+              </div>
+              <div class="physical-info-item">
+                <span class="physical-info-label">Skin tone</span>
+                <span class="physical-info-value">Translucent blue</span>
+              </div>
+              <div class="physical-info-item">
+                <span class="physical-info-label">Eye count</span>
+                <span class="physical-info-value">3</span>
+              </div>
+              <div class="physical-info-item">
+                <span class="physical-info-label">Limb structure</span>
+                <span class="physical-info-value">Hexapod</span>
+              </div>
+              <div class="physical-info-item">
+                <span class="physical-info-label">Body temp</span>
+                <span class="physical-info-value">-12°C</span>
+              </div>
+            </div>
             <div class="alen-character-image-wrapper physical-3d-wrapper">
               <canvas id="physical3dCanvas" class="physical-3d-canvas"></canvas>
             </div>
@@ -259,6 +310,21 @@
     </div>
 
     <script>
+      // Start background music as soon as page opens
+      (function() {
+        function tryPlay() {
+          var bgMusic = document.getElementById('bgMusic');
+          if (bgMusic) {
+            bgMusic.volume = 0.4;
+            bgMusic.play().catch(function() {});
+          }
+        }
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', tryPlay);
+        } else {
+          tryPlay();
+        }
+      })();
     </script>
     <script>
       // Loading screen logic
@@ -275,9 +341,59 @@
               loadingScreen.style.display = 'none';
               mainContent.style.display = 'block';
               mainContent.style.animation = 'fadeIn 0.5s ease-out';
+              var bgMusic = document.getElementById('bgMusic');
+              if (bgMusic && bgMusic.paused) {
+                bgMusic.volume = 0.4;
+                bgMusic.play().catch(function() {});
+              }
             }, 500);
           }
         }, 1500); // Show loading for 1.5 seconds
+      });
+
+      document.addEventListener('DOMContentLoaded', function() {
+        var bgMusic = document.getElementById('bgMusic');
+        var soundToggle = document.getElementById('soundToggle');
+        var soundOnEl = soundToggle && soundToggle.querySelector('.sound-on');
+        var soundOffEl = soundToggle && soundToggle.querySelector('.sound-off');
+        if (soundToggle && bgMusic) {
+          soundToggle.addEventListener('click', function() {
+            bgMusic.muted = !bgMusic.muted;
+            if (!bgMusic.muted && bgMusic.paused) {
+              bgMusic.volume = 0.4;
+              bgMusic.play().catch(function() {});
+            }
+            if (soundOnEl) soundOnEl.style.display = bgMusic.muted ? 'none' : 'inline';
+            if (soundOffEl) soundOffEl.style.display = bgMusic.muted ? 'inline' : 'none';
+            soundToggle.setAttribute('aria-label', bgMusic.muted ? 'Sound off (click to turn on)' : 'Sound on (click to turn off)');
+          });
+        }
+
+        var glitchOverlay = document.getElementById('glitchOverlay');
+        var mainContent = document.getElementById('mainContent');
+        var loadingScreen = document.getElementById('loadingScreen');
+        if (glitchOverlay) {
+          function triggerGlitch() {
+            glitchOverlay.classList.add('active');
+            if (mainContent && mainContent.style.display !== 'none') {
+              mainContent.classList.add('glitch-active');
+            }
+            if (loadingScreen && loadingScreen.style.display !== 'none') {
+              loadingScreen.classList.add('glitch-active');
+            }
+            setTimeout(function() {
+              glitchOverlay.classList.remove('active');
+              if (mainContent) {
+                mainContent.classList.remove('glitch-active');
+              }
+              if (loadingScreen) {
+                loadingScreen.classList.remove('glitch-active');
+              }
+            }, 500);
+          }
+          setInterval(triggerGlitch, 7000);
+          triggerGlitch();
+        }
       });
     </script>
     <script>
