@@ -467,6 +467,26 @@
           }
         }
 
+        function speakAlien(text) {
+          if (!window.speechSynthesis) return;
+          window.speechSynthesis.cancel();
+          var t = (text || '').replace(/^Alen:\s*/i, '').trim();
+          t = t.replace(/[⚡◊◆·~]/g, ' ').replace(/\s+/g, ' ').trim();
+          if (!t) return;
+          var u = new SpeechSynthesisUtterance(t);
+          u.rate = 0.78;
+          u.pitch = 0.6;
+          u.volume = 1;
+          var voices = window.speechSynthesis.getVoices();
+          if (voices.length) {
+            var preferred = voices.find(function(v) { return /male|Alex|Daniel|Fred|Ralph|male/i.test(v.name); })
+              || voices.find(function(v) { return v.lang.startsWith('el'); })
+              || voices[voices.length - 1];
+            u.voice = preferred;
+          }
+          window.speechSynthesis.speak(u);
+        }
+
         function fallbackAlienReply() {
           const fallbacks = [
             'Ηυmαn ⚡ ωυαντ ◊ κνωωλεδγε ◆ αλφα ετα ◊ ⚡◊◆',
@@ -474,6 +494,32 @@
             'Ωυr ◊ χιβιλιζατιον ◊ ωαιτσ ◆ ⚡◊◆'
           ];
           return fallbacks[Math.floor(Math.random() * fallbacks.length)];
+        }
+
+        function useAlienGibberish() {
+          if (typeof window === 'undefined') return false;
+          var q = window.location.search || '';
+          var h = window.location.hash || '';
+          if (q.indexOf('gibberish=1') !== -1 || q.indexOf('alien=1') !== -1 || h.indexOf('gibberish') !== -1) return true;
+          var host = window.location.hostname || '';
+          if (host === 'localhost' || host === '127.0.0.1' || host === '') return true;
+          return false;
+        }
+
+        function alienGibberish() {
+          const chars = 'αβεζηικλμνοπρστυφχωψεϊ◊◆⚡';
+          const syms = [' ⚡ ', ' ◊ ', ' ◆ ', ' · ', ' ~ '];
+          const len = 8 + Math.floor(Math.random() * 18);
+          let out = '';
+          for (let i = 0; i < len; i++) {
+            if (Math.random() < 0.35) {
+              out += syms[Math.floor(Math.random() * syms.length)];
+            } else {
+              const c = chars[Math.floor(Math.random() * chars.length)];
+              out += Math.random() < 0.4 ? c + c : c;
+            }
+          }
+          return (out.trim() || 'αα ◊ ωω ◆') + ' ⚡◊◆';
         }
 
         if (sendBtn && chatInput && chatMessages) {
@@ -484,6 +530,19 @@
             chatInput.value = '';
             addChatMessage('Alen: …', false);
             const placeholder = chatMessages.lastElementChild;
+
+            if (useAlienGibberish()) {
+              setTimeout(function() {
+                var reply = alienGibberish();
+                if (placeholder && placeholder.textContent === 'Alen: …') {
+                  placeholder.textContent = 'Alen: ' + reply;
+                } else {
+                  addChatMessage('Alen: ' + reply, false);
+                }
+                speakAlien('Alen: ' + reply);
+              }, 400 + Math.random() * 600);
+              return;
+            }
 
             try {
               const base = window.location.origin;
@@ -499,12 +558,15 @@
               } else {
                 addChatMessage('Alen: ' + reply, false);
               }
+              speakAlien('Alen: ' + reply);
             } catch (e) {
+              var fb = fallbackAlienReply();
               if (placeholder && placeholder.textContent === 'Alen: …') {
-                placeholder.textContent = 'Alen: ' + fallbackAlienReply();
+                placeholder.textContent = 'Alen: ' + fb;
               } else {
-                addChatMessage('Alen: ' + fallbackAlienReply(), false);
+                addChatMessage('Alen: ' + fb, false);
               }
+              speakAlien('Alen: ' + fb);
             }
           });
 
@@ -535,7 +597,11 @@
         // Initialize welcome message
         setTimeout(() => {
           if (chatMessages) {
-            addChatMessage('Alen: Greetings, human. I am Alen from another planet. I will share knowledge about extraterrestrial civilizations and discuss the challenges facing your species.', false);
+            var welcome = useAlienGibberish()
+              ? 'Alen: ' + alienGibberish()
+              : 'Alen: Greetings, human. I am Alen from another planet. I will share knowledge about extraterrestrial civilizations and discuss the challenges facing your species.';
+            addChatMessage(welcome, false);
+            speakAlien(welcome);
           }
         }, 2000);
 
